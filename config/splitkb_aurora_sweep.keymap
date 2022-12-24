@@ -37,22 +37,29 @@
 
     combos {
         compatible = "zmk,combos";
+
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp TAB>;
+        };
+
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>;
+            key-positions = <2 3>;
             bindings = <&kp ESC>;
         };
 
         combo_bksp {
             timeout-ms = <50>;
-            key-positions = <8 9>;
+            key-positions = <6 7>;
             bindings = <&kp BKSP>;
         };
-        
-        combo_tab {
+
+        combo_enter {
             timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
+            key-positions = <7 8>;
+            bindings = <&kp ENTER>;
         };
 
         combo_lalt {
@@ -77,12 +84,6 @@
             timeout-ms = <50>;
             key-positions = <17 18>;
             bindings = <&kp RALT>;
-        };
-
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <18 19>;
-            bindings = <&kp ENTER>;
         };
     };
 
@@ -118,10 +119,10 @@
 
 		tri_layer {
             bindings = <
-            &kp ESC     &none  &none  &kp LG(R) &kp LG(T)	        &kp LG(LBKT)  &kp LC(LS(TAB)) &kp RC(TAB)  &kp LG(RBKT) &kp BKSP
-            &kp LG(TAB) &none  &none  &none     &kp LG(L)  		    &kp LEFT      &kp DOWN        &kp UP       &kp RIGHT    &kp ENTER 
-            &none       &none  &none  &none     &kp DEL    		    &none         &kp PG_DN       &kp PG_UP    &none        &none    
-                                      &to 0     &trans  		    &mt RGUI BKSP &to 1 
+            &kp ESC   &kp LG(W) &none     &kp LG(R) &kp LG(T)	      &none         &kp LG(LBKT) &kp LG(RBKT) &none     &kp BKSP
+            &kp LG(A) &kp LG(S) &none     &none     &kp LG(L)  		  &kp LEFT      &kp DOWN     &kp UP       &kp RIGHT &kp ENTER 
+            &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp DEL    		  &none         &kp PG_DN    &kp PG_UP    &none     &none    
+                                            &to 0   &trans  		  &mt RGUI BKSP &to 1 
             >;
 		};	
 
