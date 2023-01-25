@@ -92,30 +92,30 @@
                 
        	default_layer {
             bindings = <
-            &kp Q  &kp W  &kp E  &kp R     &kp T 			    &kp Y    &kp U  &kp I    &kp O   &kp P 
-            &kp A  &kp S  &kp D  &kp F     &kp G 			    &kp H    &kp J  &kp K    &kp L   &kp COLON
-            &kp Z  &kp X  &kp C  &kp V     &kp B			    &kp N    &kp M  &kp CMMA &kp DOT &kp SLASH
+            &kp Q  &kp W  &kp E  &kp R     &kp T 			    &kp Y        &kp U  &kp I    &kp O   &kp P 
+            &kp A  &kp S  &kp D  &kp F     &kp G 			    &kp H        &kp J  &kp K    &kp L   &kp BKSP
+            &kp Z  &kp X  &kp C  &kp V     &kp B			    &kp N        &kp M  &kp CMMA &kp DOT &kp ENTER
                                  &kp LCTRL &sk LSHIFT   		&mt RGUI SPC &to 1
             >;
 		};
 
        	left_layer {
             bindings = <
-		    &kp TAB   &kp AT    &kp HASH  &td LC(LG(LS(N4))) DLLR &td LG(LS(N5)) PRCNT		   &kp CARET &kp AMPS &kp ASTRK &kp SEMI &kp ENTER
-		    &kp ESC   &kp EQUAL &kp QMARK &kp EXCL                &kp MINUS 		           &kp BSLH  &kp LBRC &kp RBRC  &kp PIPE &kp BKSP
-            &kp TILDE &kp GRAVE &kp DQT   &kp SQT                 &kp UNDER 	               &kp LBKT  &kp LPRN &kp RPRN  &kp RBKT &to 3 
-					                      &to 0                   &mo 3      	               &kp RGUI  &to 2 
+		    &kp TAB   &kp AT    &kp HASH  &td LC(LG(LS(N4))) DLLR &td LG(LS(N5)) PRCNT		   &kp CARET &kp AMPS &kp ASTRK &kp QMARK &kp SEMI
+		    &kp ESC   &kp EQUAL &kp QMARK &kp EXCL                &kp MINUS 		           &kp LBKT  &kp LBRC &kp RBRC  &kp RBKT  &kp COLON
+            &kp TILDE &kp GRAVE &kp DQT   &kp SQT                 &mt UNDER PLUS	           &kp PIPE  &kp LPRN &kp RPRN  &kp BSLH  &kp SLASH 
+					                      &to 0                   &trans      	               &kp RGUI  &to 2
             >;
 		};
 		
-		right_layer {
+        right_layer {
             bindings = <
-            &kp TAB &kp C_PP   &kp C_PREV   &kp C_NEXT   &kp EQUAL       	&none    &kp N7 &kp N8 &kp N9 &kp ENTER
-            &kp ESC &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp MINUS          &kp PLUS &kp N4 &kp N5 &kp N6 &kp BKSP
-            &to 4   &none      &kp LT       &kp GT       &kp DOT        	&kp N0   &kp N1 &kp N2 &kp N3 &to 3 
+            &kp N1  &kp N2     &kp N3       &kp N4       &kp N5       	    &kp N6   &kp N7    &kp N8    &kp N9    &kp N0
+            &kp ESC &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp TAB            &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp BKSP
+            &to 4   &kp C_PP   &kp C_PREV   &kp C_NEXT   &kp LS(TAB)        &kp HOME &kp PG_DN &kp PG_UP &kp END   &to ENTER 
                                             &to 0        &trans 	        &kp RGUI &to 2 
             >;
-		};	
+		};
 
 		tri_layer {
             bindings = <
