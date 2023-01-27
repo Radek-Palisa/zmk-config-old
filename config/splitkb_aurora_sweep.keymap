@@ -45,10 +45,10 @@
                 
        	default_layer {
             bindings = <
-            &kp Q  &kp W  &kp E  &kp R     &kp T 			    &kp Y        &kp U  &kp I    &kp O   &kp P 
-            &kp A  &kp S  &kp D  &kp F     &kp G 			    &kp H        &kp J  &kp K    &kp L   &kp BKSP
-            &kp Z  &kp X  &kp C  &kp V     &kp B			    &kp N        &kp M  &kp CMMA &kp DOT &kp ENTER
-                                 &kp LCTRL &sk LSHIFT   		&mt RGUI SPC &sl 1
+            &kp Q  &kp W  &kp E       &kp R       &mt LG(T) T 			&kp Y        &kp U  &kp I    &kp O   &kp P 
+            &kp A  &kp S  &kp D       &kp F       &kp G 			    &kp H        &kp J  &kp K    &kp L   &kp BKSP
+            &kp Z  &kp X  &mt LG(C) C &kp LG(V) V &kp B			        &kp N        &kp M  &kp CMMA &kp DOT &kp ENTER
+                                      &kp LCTRL   &sk LSHIFT   		    &mt RGUI SPC &sl 1
             >;
 		};
 
@@ -66,7 +66,7 @@
             &kp N1  &kp N2     &kp N3       &mt LC(LG(LS(N4))) N4 &mt LG(LS(N5)) N5       &kp N6   &kp N7    &kp N8    &kp N9    &kp N0
             &kp ESC &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP          &kp TAB                 &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
             &to 3   &kp C_PP   &kp C_PREV   &kp C_NEXT            &kp LS(TAB)             &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans 
-                                            &to 0                 &trans 	              &kp RGUI &sl 1
+                                            &to 0                 &trans 	              &kp RGUI &none
             >;
 		};
 
