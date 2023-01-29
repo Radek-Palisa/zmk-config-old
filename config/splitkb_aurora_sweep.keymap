@@ -13,6 +13,7 @@
 #define NAV  2
 
 #define TO_SL(layer) &to_sl layer layer   // Macro to apply move-to-layer-on-hold/sticky-layer-on-tap
+#define GUIM(keycode) &mt LG(keycode) keycode
 
 &mt {
     flavor = "tap-preferred";
@@ -34,6 +35,13 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <MOD_LCTL>;
+        };
         to_sl: behavior_to_sl {
             compatible = "zmk,behavior-hold-tap";
             label = "to_sl";
@@ -41,6 +49,14 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&to>, <&sl>;
+        };
+        kh_to: behavior_kh_to {
+            compatible = "zmk,behavior-hold-tap";
+            label = "kh_to";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&to>;
         };
     };
 
@@ -52,6 +68,11 @@
             key-positions = <11 12>;
             bindings = <&kp LALT>;
         };
+        combo_lgui {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&kp LGUI>;
+        };
     };
 
     keymap {
@@ -59,10 +80,10 @@
                 
        	default_layer {
             bindings = <
-            &kp Q  &kp W  &kp E       &kp R       &mt LG(T) T 			&kp Y        &kp U  &kp I    &kp O   &kp P 
-            &kp A  &kp S  &kp D       &kp F       &kp G 			    &kp H        &kp J  &kp K    &kp L   &kp BKSP
-            &kp Z  &kp X  &mt LG(C) C &mt LG(V) V &kp B			        &kp N        &kp M  &kp CMMA &kp DOT &kp ENTER
-                                      &kp LCTRL   &sk LSHIFT   		    &mt RGUI SPC &to_sl NAV SYM
+            &kp Q  &kp W  &kp E   GUIM(R)    GUIM(T) 			    &kp Y        &kp U          &kp I    &kp O   &kp P 
+            &kp A  &kp S  &kp D   &kp F      &kp G 			        &kp H        &kp J          &kp K    &kp L   &bspc_del
+            &kp Z  &kp X  GUIM(C) GUIM(V)    &kp B			        &kp N        &kp M          &kp CMMA &kp DOT &kp ENTER
+                                  &kp LCTRL  &sk LSHIFT   		    &mt RGUI SPC &to_sl NAV SYM
             >;
 		};
 
@@ -71,24 +92,24 @@
 		    &kp TAB   &kp AT    &kp HASH  &kp DLLR &kp PRCNT		        &kp CARET &kp AMPS &kp ASTRK &kp QMARK &kp SEMI
 		    &kp ESC   &kp EQUAL &kp QMARK &kp EXCL &kp MINUS 		        &kp LBKT  &kp LBRC &kp RBRC  &kp RBKT  &kp COLON
             &kp TILDE &kp GRAVE &kp DQT   &kp SQT  &mt UNDER PLUS	        &kp PIPE  &kp LPRN &kp RPRN  &kp BSLH  &kp SLASH 
-					                      &to BASE &to NAV      	        &sk RGUI  &none
+					                      &to BASE &to NAV      	        &kp RGUI  &none
             >;
 		};
 		
         navigation_layer {
             bindings = <
-            &kp N1  &kp N2     &kp N3       &mt LC(LG(LS(N4))) N4 &mt LG(LS(N5)) N5       &kp N6   &kp N7    &kp N8    &kp N9    &kp N0
-            &kp ESC &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP          &kp TAB                 &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans
-            &to 3   &kp C_PP   &kp C_PREV   &kp C_NEXT            &kp LS(TAB)             &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans 
-                                            &to BASE              &trans 	              &kp RGUI &kp RALT
+            &kp N1  &kp N2     &kp N3           &mt LC(LG(LS(N4))) N4 &mt LG(LS(N5)) N5       &mt C_AC_ZOOM_OUT N6 &mt C_AC_ZOOM_IN N7 &kp N8    &kp N9    &kp N0
+            &kp ESC &kp K_MUTE &kp K_VOL_DN     &kp K_VOL_UP          &kp TAB                 &kp LEFT             &kp DOWN            &kp UP    &kp RIGHT &trans
+            &to 3   &kp C_PP   &mt LG(C) C_PREV &mt LG(V) C_NEXT      &kp LS(TAB)             &kp HOME             &kp PG_DN           &kp PG_UP &kp END   &trans 
+                                                &kh_to LCTRL BASE     &trans 	              &kp RGUI             &kp RALT
             >;
 		};
 
 		control_layer {
             bindings = <
-            &none       &none      &none      &none    &none            &none   &none   &none   &none   &none  
-            &none       &none      &none      &none    &none            &none   &none   &none   &none   &none  
-            &bt BT_PRV  &bt BT_NXT &bt BT_CLR &none    &kp DEL          &none   &none   &none   &none   &none    
+            &none       &none      &none      &none    &none          &none   &none   &none   &none   &none  
+            &none       &none      &none      &none    &none          &none   &none   &none   &none   &none  
+            &bt BT_PRV  &bt BT_NXT &bt BT_CLR &none    &none          &none   &none   &none   &none   &none    
                                               &to BASE &none  		  &none   &none
             >;
 		};
