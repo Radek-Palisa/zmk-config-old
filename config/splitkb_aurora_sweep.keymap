@@ -99,7 +99,7 @@
         navigation_layer {
             bindings = <
             &kp N1  &kp N2     &kp N3           &mt LC(LG(LS(N4))) N4 &mt LG(LS(N5)) N5       &mt LG(MINUS) N6 &mt LG(PLUS) N7 &kp N8    &kp N9    &kp N0
-            &kp ESC &kp K_MUTE &kp K_VOL_DN     &kp K_VOL_UP          &kp TAB                 &kp LEFT         &kp DOWN        &kp UP    &kp RIGHT &trans
+            &kp ESC &kp K_MUTE &kp K_VOL_DN     &kp K_VOL_UP          &kp TAB                 &kp LEFT         &kp DOWN        &kp UP    &kp RIGHT &kp DEL
             &to 3   &kp C_PP   &mt LG(C) C_PREV &mt LG(V) C_NEXT      &kp LS(TAB)             &kp HOME         &kp PG_DN       &kp PG_UP &kp END   &trans 
                                                 &kh_to LCTRL BASE     &trans 	              &kp RGUI         &kp RALT
             >;
