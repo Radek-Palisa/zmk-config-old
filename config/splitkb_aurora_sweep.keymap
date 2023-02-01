@@ -80,28 +80,28 @@
                 
        	default_layer {
             bindings = <
-            &kp Q  &kp W  &kp E   GUIM(R)    GUIM(T) 			    &kp Y        &kp U          &kp I    &kp O   &kp P 
-            &kp A  &kp S  &kp D   &kp F      &kp G 			        &kp H        &kp J          &kp K    &kp L   &bspc_del
-            &kp Z  &kp X  GUIM(C) GUIM(V)    &kp B			        &kp N        &kp M          &kp CMMA &kp DOT &kp ENTER
-                                  &kp LCTRL  &sk LSHIFT   		    &mt RGUI SPC &to_sl NAV SYM
+            &kp Q  &kp W  &kp E   GUIM(R)    GUIM(T) 			    &kp Y        &kp U    &kp I    &kp O   &kp P 
+            &kp A  &kp S  &kp D   &kp F      &kp G 			        &kp H        &kp J    &kp K    &kp L   &bspc_del
+            &kp Z  &kp X  GUIM(C) GUIM(V)    &kp B			        &kp N        &kp M    &kp CMMA &kp DOT &kp ENTER
+                                  &kp LCTRL  &sk LSHIFT   		    &mt RGUI SPC &to SYM
             >;
 		};
 
        	symbol_layer {
             bindings = <
-		    &kp TAB   &kp AT    &kp HASH  &kp DLLR &kp PRCNT		        &kp CARET &kp AMPS &kp ASTRK &kp QMARK &kp SEMI
-		    &kp ESC   &kp EQUAL &kp QMARK &kp EXCL &kp MINUS 		        &kp LBKT  &kp LBRC &kp RBRC  &kp RBKT  &kp COLON
-            &kp TILDE &kp GRAVE &kp DQT   &kp SQT  &mt UNDER PLUS	        &kp PIPE  &kp LPRN &kp RPRN  &kp BSLH  &kp SLASH 
-					                      &to BASE &to NAV      	        &kp RGUI  &none
+		    &kp EXCL  &kp AT    &kp HASH  &kp DLLR          &kp PRCNT		        &kp CARET &kp AMPS &kp ASTRK &kp QMARK &kp SEMI
+		    &kp ESC   &kp EQUAL &kp EXCL  &kp SQT           &kp MINUS 		        &kp LBKT  &kp LBRC &kp RBRC  &kp RBKT  &kp COLON
+            &kp TILDE &kp GRAVE &kp EXCL  &kp DQT           &mt UNDER PLUS	        &kp PIPE  &kp LPRN &kp RPRN  &kp BSLH  &kp SLASH 
+					                      &kh_to LCTRL BASE &to NAV      	        &kp RGUI  &kp RALT
             >;
 		};
 		
         navigation_layer {
             bindings = <
             &kp N1  &kp N2     &kp N3           &mt LC(LG(LS(N4))) N4 &mt LG(LS(N5)) N5       &mt LG(MINUS) N6 &mt LG(PLUS) N7 &kp N8    &kp N9    &kp N0
-            &kp ESC &kp K_MUTE &kp K_VOL_DN     &kp K_VOL_UP          &kp TAB                 &kp LEFT         &kp DOWN        &kp UP    &kp RIGHT &kp DEL
+            &kp ESC &kp K_MUTE &kp K_VOL_DN     &kp K_VOL_UP          &kp TAB                 &kp LEFT         &kp DOWN        &kp UP    &kp RIGHT &kp BSPC
             &to 3   &kp C_PP   &mt LG(C) C_PREV &mt LG(V) C_NEXT      &kp LS(TAB)             &kp HOME         &kp PG_DN       &kp PG_UP &kp END   &trans 
-                                                &kh_to LCTRL BASE     &trans 	              &kp RGUI         &kp RALT
+                                                &kh_to LCTRL BASE     &kp LSHIFT 	          &kp RGUI         &kh_to RALT SYM
             >;
 		};
 
