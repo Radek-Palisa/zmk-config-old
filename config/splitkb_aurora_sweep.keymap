@@ -77,13 +77,13 @@
 
     keymap {
         compatible = "zmk,keymap";
-                
+
        	default_layer {
             bindings = <
             &kp Q  &kp W  &kp E   GUIM(R)    GUIM(T) 			    &kp Y        &kp U    &kp I    &kp O   &kp P 
             &kp A  &kp S  &kp D   &kp F      &kp G 			        &kp H        &kp J    &kp K    &kp L   &bspc_del
             &kp Z  &kp X  GUIM(C) GUIM(V)    &kp B			        &kp N        &kp M    &kp CMMA &kp DOT &kp ENTER
-                                  &kp LCTRL  &sk LSHIFT   		    &mt RGUI SPC &to SYM
+                                  &kp LCTRL  &sk LSHIFT   		    &mt RGUI SPC &sl SYM
             >;
 		};
 
