@@ -13,9 +13,6 @@
 #define SYM  1
 #define NAV  2
 
-#define TO_SL(layer) &to_sl layer layer   // Macro to apply move-to-layer-on-hold/sticky-layer-on-tap
-#define GUIM(keycode) &mt LG(keycode) keycode
-
 &mt {
     flavor = "tap-preferred";
     tapping_term_ms = <200>;
@@ -76,15 +73,22 @@
         };
     };
 
+    // Comment out -> Cmd + / 
+    // Figma hide UI -> Cmd + \
+    // Back navigation -> Cmd + [
+    // browse tab nav -> Ctrl + tab
+    // Terminate terminal process -> Ctrl + C
+
+
     keymap {
         compatible = "zmk,keymap";
 
        	default_layer {
             bindings = <
-            &kp Q  &kp W  &kp E   GUIM(R)    GUIM(T) 			    &kp Y        &kp U    &kp I    &mt RGUI(SLASH) O &kp P 
-            &kp A  &kp S  &kp D   &kp F      &kp G 			        &kp H        &kp J    &kp K    &kp L             &bspc_del
-            &kp Z  &kp X  GUIM(C) GUIM(V)    &kp B			        &kp N        &kp M    &kp CMMA &kp DOT           &kp ENTER
-                                  &kp LCTRL  &sk LSHIFT   		    &mt RGUI SPC &sl SYM
+            &kp Q  &kp W  &kp E   &kp R    &kp T 			        &kp Y        &kp U    &kp I    &mt RGUI(SLASH) O &kp P 
+            &kp A  &kp S  &kp D   &kp F    &kp G 			        &kp H        &kp J    &kp K    &kp L             &mt RA(BACKSPACE) BACKSPACE
+            &kp Z  &kp X  &kp C   &kp V    &kp B			        &kp N        &kp M    &kp CMMA &kp DOT           &kp ENTER
+                                  &kp RGUI   &sk LSHIFT   		    &mt RGUI SPC &sl SYM
             >;
 		};
 
