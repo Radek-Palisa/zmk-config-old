@@ -9,10 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE 0
-#define SYM  1
-#define NAV  2
-
 &mt {
     flavor = "tap-preferred";
     tapping_term_ms = <200>;
@@ -88,7 +84,7 @@
             &kp Q  &kp W  &kp E   &kp R    &kp T 			        &kp Y        &kp U    &kp I    &mt RGUI(SLASH) O &kp P 
             &kp A  &kp S  &kp D   &kp F    &kp G 			        &kp H        &kp J    &kp K    &kp L             &mt RA(BACKSPACE) BACKSPACE
             &kp Z  &kp X  &kp C   &kp V    &kp B			        &kp N        &kp M    &kp CMMA &kp DOT           &kp ENTER
-                                  &kp RGUI   &sk LSHIFT   		    &mt RGUI SPC &sl SYM
+                                  &kp RGUI   &sk LSHIFT   		    &mt RGUI SPC &sl 1
             >;
 		};
 
@@ -97,7 +93,7 @@
 		    &kp EXCL  &kp AT    &kp HASH  &kp DLLR          &kp PRCNT		        &kp CARET &kp AMPS &kp ASTRK &kp QMARK &kp SEMI
 		    &kp ESC   &kp EQUAL &kp EXCL  &kp SQT           &kp MINUS 		        &kp LBKT  &kp LBRC &kp RBRC  &kp RBKT  &kp COLON
             &kp TILDE &kp GRAVE &kp EXCL  &kp DQT           &mt UNDER PLUS	        &kp PIPE  &kp LPRN &kp RPRN  &kp BSLH  &kp SLASH 
-					                      &kh_to LCTRL BASE &to NAV      	        &kp RGUI  &kp RALT
+					                      &kh_to LCTRL 0 &to 2      	        &kp RGUI  &kp RALT
             >;
 		};
 		
@@ -106,7 +102,7 @@
             &kp N1  &kp N2     &kp N3           &mt LC(LG(LS(N4))) N4 &mt LG(LS(N5)) N5       &mt LG(MINUS) N6 &mt LG(PLUS) N7 &kp N8    &kp N9    &kp N0
             &kp ESC &kp K_MUTE &kp K_VOL_DN     &kp K_VOL_UP          &kp TAB                 &kp LEFT         &kp DOWN        &kp UP    &kp RIGHT &kp BSPC
             &to 3   &kp C_PP   &mt LG(C) C_PREV &mt LG(V) C_NEXT      &kp LS(TAB)             &kp HOME         &kp PG_DN       &kp PG_UP &kp END   &trans 
-                                                &kh_to LCTRL BASE     &kp LSHIFT 	          &kp RGUI         &kp RALT
+                                                &kh_to LCTRL 0     &kp LSHIFT 	          &kp RGUI         &kp RALT
             >;
 		};
 
@@ -115,7 +111,7 @@
             &out OUT_USB &out OUT_BLE &out OUT_TOG &none    &kp Y          &none   &none   &none   &none   &none  
             &none        &none        &none        &none    &none          &none   &none   &none   &none   &none  
             &bt BT_PRV   &bt BT_NXT   &bt BT_CLR   &none    &none          &none   &none   &none   &none   &none    
-                                                   &to BASE &none   	   &none   &none
+                                                   &to 0 &none   	   &none   &none
             >;
 		};
 	};
